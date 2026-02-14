@@ -126,6 +126,42 @@
         <p><strong>Te Amo mucho</strong></p>
         
         <p style="font-family: 'Pirata One'; font-size: 1.5rem; color: #b71c1c; margin: 15px 0;">¿QUISIERAS SER MI SAN VALENTIN?</p>
+
+        <div id="player" style="display:none;"></div>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<button id="btn-musica" onclick="toggleMusica()" style="margin-top: 20px; background: none; border: 1px solid #444; color: #b71c1c; cursor: pointer; font-family: 'Pirata One';">
+    🎵 REPRODUCIR BANDA SONORA 💀
+</button>
+
+<script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '0',
+            width: '0',
+            videoId: 'vW2yYZl8Qv0', // ID de Warmness on the Soul
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        // El reproductor está listo
+    }
+
+    function toggleMusica() {
+        var estado = player.getPlayerState();
+        if (estado == 1) {
+            player.pauseVideo();
+            document.getElementById('btn-musica').innerText = "🎵 REPRODUCIR BANDA SONORA 💀";
+        } else {
+            player.playVideo();
+            document.getElementById('btn-musica').innerText = "⏸️ PAUSAR MÚSICA";
+        }
+    }
+</script>
         
         <div class="firma">
             Con cariño, <br>
@@ -172,7 +208,3 @@
 </body>
 </html>
 </html>
-
-
-
-
