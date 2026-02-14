@@ -3,81 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Una nota para ti</title>
+    <title>A Little Piece of Heaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Crimson+Text:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
     <style>
-        /* Estilos generales */
+        /* Estilos base temáticos A7X */
         body {
-            background-color: #fdf6ec; /* Color crema suave */
+            background-color: #0a0a0a; /* Negro profundo */
+            background-image: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            font-family: 'Georgia', serif;
+            font-family: 'Crimson Text', serif;
+            overflow: hidden; /* Para que no salgan barras de scroll por los efectos */
         }
 
-        /* La "Hoja" de la carta */
+        /* Contenedor de la carta */
         .carta {
-            background-color: white;
+            background: linear-gradient(145deg, #181818, #111111);
             padding: 40px;
             width: 85%;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            max-width: 450px;
+            border: 1px solid #333;
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.15); /* Resplandor rojo tenue */
+            border-radius: 5px;
             position: relative;
             line-height: 1.6;
-            color: #444;
+            color: #d1d1d1;
+            z-index: 10;
         }
 
-        /* Decoración de línea roja lateral (como papel) */
+        /* Detalle de borde gótico */
         .carta::before {
             content: '';
             position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: #ffcccc;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px solid #444;
+            pointer-events: none;
         }
 
+        /* Título estilo A7X */
         h1 {
-            font-size: 1.5rem;
-            color: #d63384;
+            font-family: 'Pirata One', cursive;
+            font-size: 2.5rem;
+            color: #b71c1c; /* Rojo sangre */
             text-align: center;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
         }
 
         p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-align: center;
         }
 
         .firma {
             text-align: right;
-            font-style: italic;
+            font-family: 'Pirata One', cursive;
+            font-size: 1.4rem;
             margin-top: 30px;
-            color: #777;
+            color: #b71c1c;
+        }
+
+        /* Animación del Deathbat (Calavera) */
+        .deathbat {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, 0px); }
+            50% { transform: translate(-50%, -15px); }
+        }
+
+        /* Efecto de pétalos/ceniza cayendo */
+        .petal {
+            position: absolute;
+            top: -10px;
+            color: #ff0000;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Botón de respuesta */
+        .btn-valentine {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #b71c1c;
+            color: white;
+            border: none;
+            font-family: 'Pirata One', cursive;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .btn-valentine:hover {
+            background-color: #ff0000;
+            box-shadow: 0 0 20px rgba(255,0,0,0.6);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
+
+    <div class="deathbat">🦇💀🦇</div>
 
     <div class="carta">
         <h1>Hola mi Criatura Hermosa</h1>
         
         <p>Escribo esto porque a veces las palabras se las lleva el viento, pero el código se queda en el servidor.</p>
         
-        <p>Quería decirte que...</p>
+        <p><i>"Seize the day or die regretting the time you lost..."</i></p>
         
-        <p>Eres lo mas hermoso que me ha pasado hasta ahora, no cabe duda que tengo a la novia mas hermosa del mundo, te quiero mucho, eres como un amanecer cada que te veo.</p>
-        <p>Cada que estoy junto a ti, se acelera mi corazon, es como si mis problemas desaparecieran, como si lo tuviera todo en el mundo</p>
-        <p>Te Amo mucho</p>
-        <p>Y quisiera saber si tu quisieras ser mi San Valentin</p>
+        <p>Eres lo mas hermoso que me ha pasado hasta ahora, no cabe duda que tengo a la novia mas hermosa del mundo. Eres como un amanecer cada que te veo.</p>
+        
+        <p>Cada que estoy junto a ti, se acelera mi corazón. Es como si mis problemas desaparecieran, como si lo tuviera todo en el mundo.</p>
+        
+        <p><strong>Te Amo mucho</strong></p>
+        
+        <p>Y quisiera saber...</p>
+        <p style="font-family: 'Pirata One'; font-size: 1.8rem; color: #b71c1c;">¿QUISIERAS SER MI SAN VALENTIN?</p>
+
+        <a href="https://wa.me/TU_NUMERO_AQUÍ?text=Siii%20quiero!%20💀❤️" class="btn-valentine">¡SÍ, ACEPTO!</a>
+
         <div class="firma">
             Con cariño, <br>
-            Tu novio Angel || AKA: AZTK
+            Tu novio Angel || AZTK
         </div>
     </div>
 
-</body>
+    <script>
+        // Generador de pétalos oscuros para el ambiente
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.innerHTML = Math.random() > 0.5 ? '❤️' : '🥀';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 3 + 2 + 's';
+            petal.style.opacity = Math.random();
+            petal.style.fontSize = Math.random() * 15 + 10 + 'px';
+            
+            document.body.appendChild(petal);
 
+            setTimeout(() => {
+                petal.remove();
+            }, 5000);
+        }
+
+        setInterval(createPetal, 300);
+    </script>
+
+</body>
 </html>
+
